@@ -176,7 +176,10 @@ const Checkout = () => {
                                         setProvinceId(e.target.value)
                                     }
                                 >
-                                    <option value="">=== Choose ===</option>
+                                    <option value="jawa timur">Jawa Timur</option>
+                                    <option value="jawa barat">Jawa Barat</option>
+                                    <option value="jawa tengah">Jawa Tengah</option>
+                                    <option value="papua">Papua</option>
                                     {provinces.map((province, index) => {
                                         return (
                                             <option
@@ -329,7 +332,7 @@ const Checkout = () => {
                                                     {cart.name} ({cart.quantity}{" "}
                                                     x {cart.price})
                                                     <span>
-                                                        $
+                                                        
                                                         {cart.price *
                                                             cart.quantity}
                                                     </span>

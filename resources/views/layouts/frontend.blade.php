@@ -6,7 +6,7 @@
     <meta name="keywords" content="Ogani, unica, creative, html" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Ogani | Template</title>
+    <title>Book Store</title>
 
     <!-- Google Font -->
     <link
@@ -35,7 +35,7 @@
     <div class="humberger__menu__overlay"></div>
     <div class="humberger__menu__wrapper">
       <div class="humberger__menu__logo">
-        <a href="#"><img src="{{ asset('frontend/img/logo.png') }}" alt="" /></a>
+        <a href="#"><img src="{{ asset('frontend/img/logoo.png') }}" alt="" /></a>
       </div>
       <div class="humberger__menu__cart">
         <ul>
@@ -46,7 +46,7 @@
             <a href="#"><i class="fa fa-shopping-bag"></i> <span>{{ $cartCount }}</span></a>
           </li>
         </ul>
-        <div class="header__cart__price">item: <span>${{ $cartTotal }}</span></div>
+        <div class="header__cart__price">item: <span>{{ $cartTotal }}</span></div>
       </div>
       <div class="humberger__menu__widget">
           @guest
@@ -80,7 +80,7 @@
       <nav class="humberger__menu__nav mobile-menu">
         <ul>
           <li class="active"><a href="/">Home</a></li>
-          <li><a href="{{ route('shop.index') }}">Shop</a></li>
+          <li><a href="{{ route('shop.index') }}">About Us</a></li>
           <li>
             <a href="#">Categories</a>
             <ul class="header__menu__dropdown">
@@ -89,7 +89,7 @@
               @endforeach
             </ul>
           </li>
-          <li><a href="#">Contact</a></li>
+          <li><a href="https://api.whatsapp.com/send?phone=6285337250955&text=Halo%20Selamat%20Datang%20Di%20Toko%20Kami">Contact</a></li>
         </ul>
       </nav>
       <div id="mobile-menu-wrap"></div>
@@ -111,7 +111,7 @@
     <!-- Header Section Begin -->
     <header class="header">
       <div class="header__top">
-        <div class="container">
+        <!-- <div class="container">
           <div class="row">
             <div class="col-lg-6 col-md-6">
               <div class="header__top__left">
@@ -159,19 +159,19 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
       <div class="container">
         <div class="row">
           <div class="col-lg-3">
             <div class="header__logo">
-              <a href="/"><img src="{{ asset('frontend/img/logo.png') }}" alt="" /></a>
+              <a href="/"><img src="{{ asset('frontend/img/logoo.png') }}" alt="" /></a>
             </div>
           </div>
           <div class="col-lg-6">
             <nav class="header__menu">
               <ul>
                 <li class="active"><a href="/">Home</a></li>
-                <li><a href="{{ route('shop.index') }}">Shop</a></li>
+                <li><a href="{{ route('shop.index') }}">About Us</a></li>
                 <li>
                   <a href="#">Categories</a>
                   <ul class="header__menu__dropdown">
@@ -180,7 +180,43 @@
                     @endforeach
                   </ul>
                 </li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="https://api.whatsapp.com/send?phone=6285337250955&text=Halo%20Selamat%20Datang%20Di%20Toko%20Kami">Contact</a></li>
+                @guest
+                  <div class="header__top__right">
+                    <div
+                      class="header__top__right__language header__top__right__auth"
+                    >
+                      <a class="d-inline" href="{{ route('login') }}"
+                        ><i class="fa fa-user"></i> Login</a
+                      >
+                    </div>
+                    <div class="header__top__right__auth">
+                      <a href="{{ route('register') }}"><i class="fa fa-user"></i> Register</a>
+                    </div>
+                </div>
+                @else 
+                <div class="header__top__right">
+                <div
+                  class="header__top__right__language header__top__right__auth"
+                >
+                  <a class="d-inline" href="#"
+                    ><i class="fa fa-user"></i> {{ auth()->user()->username }}</a
+                  >
+                  <span class="arrow_carrot-down"></span>
+                  <ul>
+                    <li><a href="#">Profile</a></li>
+                  </ul>
+                </div>
+                <div class="header__top__right__auth">
+                  <a href="#" onclick="event.preventDefault();document.getElementById('logout-form').submit()"><i class="fa fa-user"></i> Logout</a>
+                  <form action="{{ route('logout') }}" id="logout-form" method="post">
+                    @csrf                   
+                  </form>
+                </div>
+              </div>
+                @endguest
+
+
               </ul>
             </nav>
           </div>
@@ -196,7 +232,7 @@
                   >
                 </li>
               </ul>
-              <div class="header__cart__price">item: <span>${{ $cartTotal }}</span></div>
+              <div class="header__cart__price">item: <span>{{ $cartTotal }}</span></div>
             </div>
           </div>
         </div>
@@ -206,7 +242,7 @@
       </div>
     </header>
     <!-- Header Section End -->
-
+<br>
     <!-- Hero Section Begin -->
     <section class="hero">
       <div class="container">
@@ -219,14 +255,14 @@
                   <button type="submit" class="site-btn">SEARCH</button>
                 </form>
               </div>
-              <div class="hero__search__phone">
+              <!-- <div class="hero__search__phone">
                 <div class="hero__search__phone__icon">
                   <i class="fa fa-phone"></i>
-                </div>
-                <div class="hero__search__phone__text">
+                </div> -->
+                <!-- <div class="hero__search__phone__text">
                   <h5>+65 11.188.888</h5>
                   <span>support 24/7 time</span>
-                </div>
+                </div> -->
               </div>
             </div>
           </div>
@@ -244,12 +280,12 @@
           <div class="col-lg-3 col-md-6 col-sm-6">
             <div class="footer__about">
               <div class="footer__about__logo">
-                <a href="./index.html"><img src="{{ asset('frontend/img/logo.png') }}" alt="" /></a>
+                <a href="./index.html"><img src="{{ asset('frontend/img/logoo.png') }}" alt="" /></a>
               </div>
               <ul>
-                <li>Address: 60-49 Road 11378 New York</li>
+                <li>Address: 3J35+4GV, Istana Gajayana Blok A, Malang</li>
                 <li>Phone: +65 11.188.888</li>
-                <li>Email: hello@colorlib.com</li>
+                <li>Email: tokobukususi@gmail.com</li>
               </ul>
             </div>
           </div>
@@ -305,7 +341,7 @@
                   </script>
                   All rights reserved | This template is made with
                   <i class="fa fa-heart" aria-hidden="true"></i> by
-                  <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                  <a href="https://colorlib.com" target="_blank">SUSANTI</a>
                   <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                 </p>
               </div>

@@ -21,6 +21,7 @@ Route::get('/shop/{slug?}', [\App\Http\Controllers\ShopController::class, 'index
 Route::get('/shop/tag/{slug?}', [\App\Http\Controllers\ShopController::class, 'tag'])->name('shop.tag');
 Route::get('/product/{product:slug}', [\App\Http\Controllers\ProductController::class, 'show'])->name('product.show');
 
+
 // react route
 Route::get('products/{slug?}', [\App\Http\Controllers\ShopController::class, 'getProducts']);
 Route::get('products', [\App\Http\Controllers\HomeController::class, 'getProducts']);
@@ -63,3 +64,7 @@ Route::group(['middleware' => 'auth'], function() {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('admin',[App\Http\Controllers\UserController::class, 'getUser'])->name('admin.user.index');
+
+

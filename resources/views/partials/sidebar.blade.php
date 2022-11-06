@@ -3,9 +3,9 @@
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
                 <div class="sidebar-brand-icon rotate-n-15">
-                    <i class="fas fa-laugh-wink"></i>
+                    <i></i>
                 </div>
-                <div class="sidebar-brand-text mx-3">Homepage</div>
+                <div class="sidebar-brand-text mx-3">HOMEPAGE ADMIN</div>
             </a>
 
             <!-- Divider -->
@@ -34,6 +34,7 @@
                         <a class="collapse-item" href="{{ route('admin.categories.index') }}">Category</a>
                         <a class="collapse-item" href="{{ route('admin.tags.index') }}">Tag</a>
                         <a class="collapse-item" href="{{ route('admin.products.index') }}">Product</a>
+                        <a class="collapse-item" href="{{ route('admin.user.index') }}">USER</a>
                     </div>
                 </div>
             </li>

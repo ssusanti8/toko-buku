@@ -1,6 +1,14 @@
 @extends('layouts.app')
 
 @section('content')
+<style>
+    body {
+    background-color: #ADD8E6;
+    }
+    .card{
+        background-color: #87CEFA;
+    }
+   </style> 
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
